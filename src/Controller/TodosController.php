@@ -16,7 +16,7 @@ class TodosController extends AppController {
 
 	public function index()
 	{
-
+		//this method is intentionally left blank
 	}
 
 	public function add()
