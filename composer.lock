@@ -131,12 +131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "16cfbdef3adb479e517ab46c3e4305196678a5fa"
+                "reference": "41501ebe9fd32ffa65eb802d4ccd494a0d750bd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/16cfbdef3adb479e517ab46c3e4305196678a5fa",
-                "reference": "16cfbdef3adb479e517ab46c3e4305196678a5fa",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/41501ebe9fd32ffa65eb802d4ccd494a0d750bd1",
+                "reference": "41501ebe9fd32ffa65eb802d4ccd494a0d750bd1",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-11-29 14:02:31"
+            "time": "2014-12-01 03:54:38"
         },
         {
             "name": "cakephp/debug_kit",
@@ -196,12 +196,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "074770f888e7a869a54ed28ee1eae666f07db8a7"
+                "reference": "8a6f3da9d7fc8cb5df33a1752de5d0b337b63047"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/074770f888e7a869a54ed28ee1eae666f07db8a7",
-                "reference": "074770f888e7a869a54ed28ee1eae666f07db8a7",
+                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/8a6f3da9d7fc8cb5df33a1752de5d0b337b63047",
+                "reference": "8a6f3da9d7fc8cb5df33a1752de5d0b337b63047",
                 "shasum": ""
             },
             "require": {
@@ -245,7 +245,7 @@
                 "debug",
                 "kit"
             ],
-            "time": "2014-11-29 04:52:22"
+            "time": "2014-11-29 19:04:50"
         },
         {
             "name": "cakephp/migrations",
