@@ -2,8 +2,8 @@
 namespace App\Test\TestCase\Controller;
 
 use Cake\I18n\Time;
-use Cake\TestSuite\IntegrationTestCase;
 use Cake\Routing\Router;
+use Cake\TestSuite\IntegrationTestCase;
 
 class TotosControllerTest extends IntegrationTestCase {
 

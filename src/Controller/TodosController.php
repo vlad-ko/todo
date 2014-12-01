@@ -71,7 +71,7 @@ class TodosController extends AppController {
 /**
  * marks the to-do as complete, i.e. changes is_done to 1
  *
- * @param  int $id id of the record to mark as done
+ * @param int $id id of the record to mark as done
  * @return void
  */
 	public function finish($id = null) {

@@ -2,9 +2,9 @@
 namespace App\Test\TestCase\Model\Table;
 
 use Cake\I18n\Time;
+use Cake\ORM\Query;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
-use Cake\ORM\Query;
 
 class TodosTest extends TestCase {
 
@@ -14,13 +14,6 @@ class TodosTest extends TestCase {
  * @var array
  */
 	public $fixtures = ['app.todos'];
-
-/**
- * instance of Todos table obj
- *
- * @var object
- */
-	protected $Todos;
 
 /**
  * setUp() method
