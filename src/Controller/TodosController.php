@@ -6,13 +6,13 @@ use Cake\ORM\TableRegistry;
 
 class TodosController extends AppController {
 	public function initialize() {
-        parent::initialize();
-        $this->loadComponent('RequestHandler');
-    }
+		parent::initialize();
+		$this->loadComponent('RequestHandler');
+	}
 
-    public function beforeFilter(\Cake\Event\Event $event) {
-    	$this->RequestHandler->addInputType('json', ['json_decode', true]);
-    }
+	public function beforeFilter(\Cake\Event\Event $event) {
+		$this->RequestHandler->addInputType('json', ['json_decode', true]);
+	}
 
 	public function index()
 	{
@@ -40,7 +40,7 @@ class TodosController extends AppController {
 		$query = $this->Todos->find('recent', ['status' => $status]);
 		$todos = $query->toArray();
 		$this->set(compact('todos'));
-    	$this->set('_serialize', ['todos']);
+		$this->set('_serialize', ['todos']);
 	}
 
 	public function finish($id = null)
@@ -53,7 +53,7 @@ class TodosController extends AppController {
 			if ($todos->save($todo)) {
 				$response = ['result' => 'success'];
 			}
- 		}
+		}
 		$this->set(compact('response'));
 		$this->set('_serialize', ['response']);
 	}
