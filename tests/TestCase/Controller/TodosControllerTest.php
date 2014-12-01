@@ -16,15 +16,15 @@ class TotosControllerTest extends IntegrationTestCase {
         $result = $this->post(Router::url(
         	['controller' => 'todos',
         	 'action' => 'add',
-        	 '_ext' => 'json' 
-			]), 
+        	 '_ext' => 'json'
+			]),
         ['todo' => 'run test']);
 
         // Check that the response was a 200
         $this->assertResponseOk();
 
         $expected = [
-            'response' => ['result' => 'success', 'entry' => ['todo' => 'run test']],
+            'response' => ['result' => 'success'],
         ];
         $expected = json_encode($expected, JSON_PRETTY_PRINT);
 
@@ -44,7 +44,6 @@ class TotosControllerTest extends IntegrationTestCase {
         	 '_ext' => 'json'
 			])
 		);
-
 		// Check that the response was a 200
         $this->assertResponseOk();
 
@@ -70,7 +69,7 @@ class TotosControllerTest extends IntegrationTestCase {
         $result = $this->get(Router::url(
         	['controller' => 'todos',
         	 'action' => 'finish',
-        	 '_ext' => 'json' 
+        	 '_ext' => 'json'
 			], ['id' => 1])
 		);
 
@@ -80,7 +79,7 @@ class TotosControllerTest extends IntegrationTestCase {
         $data = $result = $this->get(Router::url(
         	['controller' => 'todos',
         	 'action' => 'get',
-        	 '_ext' => 'json' 
+        	 '_ext' => 'json'
 			], ['status' => 1])
 		);
 		$expected = [];

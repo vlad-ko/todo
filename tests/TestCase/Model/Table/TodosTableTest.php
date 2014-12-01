@@ -3,11 +3,14 @@ namespace App\Test\TestCase\Model\Table;
 
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
+use Cake\ORM\Query;
 
 use Cake\I18n\Time;
 
 class TodosTest extends TestCase {
     public $fixtures = ['app.todos'];
+
+    protected $Todos;
 
     public function setUp() {
         parent::setUp();
@@ -36,18 +39,17 @@ class TodosTest extends TestCase {
     }
 
     public function testRecent() {
-        $query = $this->Todos->find('recent', ['status' => 0]);
+        $result = $this->Todos->find('recent', ['status' => 0]);
+        $recent = $result->first()->toArray();
         $expected = [
-            [
                 'id' => 1,
                 'todo' => 'First To-do',
-                'created' => new Time('2014-11-21 12:00:00'),
-                'updated' => new Time('2014-11-21 12:00:00'),
+                'created' => '1 week, 3 days ago',
+                'updated' => '1 week, 3 days ago',
                 'is_done' => 0
-            ]
         ];
 
-        $this->assertEquals($expected, $query->toArray());
+        $this->assertEquals($expected, $recent);
     }
 
     public function testFindTimeAgoInWords() {

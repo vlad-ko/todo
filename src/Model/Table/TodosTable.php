@@ -34,12 +34,14 @@ class TodosTable extends Table {
 	  			->where(['is_done' => $options['status']])
 		      	->order(['updated' => 'DESC'])
 		      	->map(function ($row) {
-			    	 $timeCreated = new Time($row->created);
-			    	 $timeUpdated = new Time($row->updated);
-			    	 $row->created = $timeCreated->timeAgoInWords();
-			         $row->updated = $timeUpdated->timeAgoInWords();
-	        	 return $row;
+			    	$timeCreated = new Time($row->created);
+			    	$timeUpdated = new Time($row->updated);
+
+			    	$row->created = $timeCreated->timeAgoInWords();
+			        $row->updated = $timeUpdated->timeAgoInWords();
+	        	return $row;
 	    	});
+		//debug($query);
     	return $query;
     }
 }
