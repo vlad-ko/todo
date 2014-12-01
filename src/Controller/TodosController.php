@@ -19,7 +19,7 @@ class TodosController extends AppController {
 /**
  * cakephp's beforeFilter()
  *
- * @param  CakeEventEvent $event cakephp event
+ * @param CakeEventEvent $event cakephp event
  * @return void
  */
 	public function beforeFilter(\Cake\Event\Event $event) {
@@ -28,19 +28,19 @@ class TodosController extends AppController {
 
 /**
  * main action for the application
+ *
  * @return void
  */
-	public function index()
-	{
+	public function index() {
 		//this method is intentionally left blank
 	}
 
 /**
  * add() action to create a new to-do
+ *
  * @return void
  */
-	public function add()
-	{
+	public function add() {
 		$response = ['result' => 'fail'];
 		$errors = $this->Todos->validator()->errors($this->request->data);
 		if (empty($errors)) {
@@ -58,11 +58,10 @@ class TodosController extends AppController {
 /**
  * gets either done or incomplete to-do's depending on the status
  *
- * @param  integer $status 0/1 incomplete/complete
+ * @param int $status 0/1 incomplete/complete
  * @return void
  */
-	public function get($status = 0)
-	{
+	public function get($status = 0) {
 		$query = $this->Todos->find('recent', ['status' => $status]);
 		$todos = $query->toArray();
 		$this->set(compact('todos'));
@@ -75,10 +74,9 @@ class TodosController extends AppController {
  * @param  int $id id of the record to mark as done
  * @return void
  */
-	public function finish($id = null)
-	{
+	public function finish($id = null) {
 		$response = ['result' => 'fail'];
-		if(!is_null($id)) {
+		if (!is_null($id)) {
 			$todos = TableRegistry::get('Todos');
 			$todo = $todos->get($id);
 			$todos->patchEntity($todo, ['is_done' => 1]);

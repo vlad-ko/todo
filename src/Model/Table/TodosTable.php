@@ -11,10 +11,11 @@ class TodosTable extends Table {
 /**
  * initialize method
  *
- * @param  array  $config list of config options
+ * @param array $config list of config options
+ * @return void
  */
 	public function initialize(array $config) {
-		$this->addBehavior('Timestamp' , [
+		$this->addBehavior('Timestamp', [
 			'events' => [
 				'Model.beforeSave' => [
 				'created' => 'new',
@@ -26,7 +27,7 @@ class TodosTable extends Table {
 /**
  * Default validator method
  *
- * @param  Validator $validator cakephp validator object
+ * @param Validator $validator cakephp validator object
  * @return Validator $validator cakephp validator object
  */
 	public function validationDefault(Validator $validator) {
@@ -40,9 +41,9 @@ class TodosTable extends Table {
 /**
  * Custom finder method, returns recent to-do's based on status
  *
- * @param  Query  $query  cakephp query object
- * @param  array  $options list of options
- * @return query  $query cakephp query object
+ * @param Query $query  cakephp query object
+ * @param array $options list of options
+ * @return query $query cakephp query object
  */
 	public function findRecent(Query $query, array $options) {
 		if (empty($options)) {
