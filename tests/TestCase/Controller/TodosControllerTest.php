@@ -2,8 +2,8 @@
 namespace App\Test\TestCase\Controller;
 
 use Cake\I18n\Time;
-use Cake\Routing\Router;
 use Cake\TestSuite\IntegrationTestCase;
+use Cake\Routing\Router;
 
 class TotosControllerTest extends IntegrationTestCase {
 
@@ -26,8 +26,8 @@ class TotosControllerTest extends IntegrationTestCase {
 
 		$result = $this->post(Router::url(
 			['controller' => 'todos',
-			 'action' => 'add',
-			 '_ext' => 'json'
+				'action' => 'add',
+				'_ext' => 'json'
 			]),
 		['todo' => 'run test']);
 
@@ -56,8 +56,8 @@ class TotosControllerTest extends IntegrationTestCase {
 
 		$result = $this->get(Router::url(
 			['controller' => 'todos',
-			 'action' => 'get',
-			 '_ext' => 'json'
+				'action' => 'get',
+				'_ext' => 'json'
 			])
 		);
 		// Check that the response was a 200
@@ -89,8 +89,8 @@ class TotosControllerTest extends IntegrationTestCase {
 
 		$result = $this->get(Router::url(
 			['controller' => 'todos',
-			 'action' => 'finish',
-			 '_ext' => 'json'
+				'action' => 'finish',
+				'_ext' => 'json'
 			], ['id' => 1])
 		);
 
@@ -99,8 +99,8 @@ class TotosControllerTest extends IntegrationTestCase {
 
 		$data = $result = $this->get(Router::url(
 			['controller' => 'todos',
-			 'action' => 'get',
-			 '_ext' => 'json'
+				'action' => 'get',
+				'_ext' => 'json'
 			], ['status' => 1])
 		);
 		$expected = [];

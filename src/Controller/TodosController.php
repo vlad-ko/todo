@@ -8,6 +8,8 @@ class TodosController extends AppController {
 
 /**
  * initialize method
+ *
+ * @return void
  */
 	public function initialize() {
 		parent::initialize();
@@ -18,6 +20,7 @@ class TodosController extends AppController {
  * cakephp's beforeFilter()
  *
  * @param  CakeEventEvent $event cakephp event
+ * @return void
  */
 	public function beforeFilter(\Cake\Event\Event $event) {
 		$this->RequestHandler->addInputType('json', ['json_decode', true]);
@@ -25,6 +28,7 @@ class TodosController extends AppController {
 
 /**
  * main action for the application
+ * @return void
  */
 	public function index()
 	{
@@ -33,6 +37,7 @@ class TodosController extends AppController {
 
 /**
  * add() action to create a new to-do
+ * @return void
  */
 	public function add()
 	{
@@ -54,6 +59,7 @@ class TodosController extends AppController {
  * gets either done or incomplete to-do's depending on the status
  *
  * @param  integer $status 0/1 incomplete/complete
+ * @return void
  */
 	public function get($status = 0)
 	{
@@ -67,6 +73,7 @@ class TodosController extends AppController {
  * marks the to-do as complete, i.e. changes is_done to 1
  *
  * @param  int $id id of the record to mark as done
+ * @return void
  */
 	public function finish($id = null)
 	{
