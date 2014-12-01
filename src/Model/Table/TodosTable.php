@@ -12,7 +12,6 @@ class TodosTable extends Table {
  * initialize method
  *
  * @param  array  $config list of config options
- * @return none
  */
 	public function initialize(array $config) {
 		$this->addBehavior('Timestamp' , [
