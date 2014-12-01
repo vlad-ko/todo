@@ -5,20 +5,39 @@ use Cake\Core\Configure;
 use Cake\ORM\TableRegistry;
 
 class TodosController extends AppController {
+
+/**
+ * initialize method
+ * @return none
+ */
 	public function initialize() {
 		parent::initialize();
 		$this->loadComponent('RequestHandler');
 	}
 
+/**
+ * cakephp's beforeFilter()
+ *
+ * @param  CakeEventEvent $event [description]
+ * @return none
+ */
 	public function beforeFilter(\Cake\Event\Event $event) {
 		$this->RequestHandler->addInputType('json', ['json_decode', true]);
 	}
 
+/**
+ * main action for the application
+ *
+ * @return none
+ */
 	public function index()
 	{
 		//this method is intentionally left blank
 	}
 
+/**
+ * add() action to create a new to-do
+ */
 	public function add()
 	{
 		$response = ['result' => 'fail'];
@@ -35,6 +54,12 @@ class TodosController extends AppController {
 		$this->set('_serialize', ['response']);
 	}
 
+/**
+ * gets either done or incomplete to-do's depending on the status
+ *
+ * @param  integer $status 0/1 incomplete/complete
+ * @return none
+ */
 	public function get($status = 0)
 	{
 		$query = $this->Todos->find('recent', ['status' => $status]);
@@ -43,6 +68,12 @@ class TodosController extends AppController {
 		$this->set('_serialize', ['todos']);
 	}
 
+/**
+ * marks the to-do as complete, i.e. changes is_done to 1
+ *
+ * @param  int $id id of the record to mark as done
+ * @return none
+ */
 	public function finish($id = null)
 	{
 		$response = ['result' => 'fail'];
