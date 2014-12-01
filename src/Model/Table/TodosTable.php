@@ -3,11 +3,18 @@ namespace App\Model\Table;
 
 use Cake\ORM\Query;
 use Cake\ORM\Table;
-use Cake\Validation\Validator;
 use Cake\I18n\Time;
+use Cake\Validation\Validator;
+
 
 class TodosTable extends Table {
 
+	/**
+	 * initialize method
+	 *
+	 * @param  array  $config list of config options
+	 * @return none
+	 */
 	public function initialize(array $config) {
 		$this->addBehavior('Timestamp' , [
 			'events' => [
@@ -18,6 +25,12 @@ class TodosTable extends Table {
 		]]);
 	}
 
+	/**
+	 * Default validator method
+	 *
+	 * @param  Validator $validator
+	 * @return Validator $validator
+	 */
 	public function validationDefault(Validator $validator) {
 		$validator
 		->allowEmpty('todo', 'update')
@@ -26,6 +39,13 @@ class TodosTable extends Table {
 		return $validator;
 	}
 
+	/**
+	 * Custom finder method, returns recent to-do's based on status
+	 *
+	 * @param  Query  $query   query object
+	 * @param  array  $options list of options
+	 * @return query  $query
+	 */
 	public function findRecent(Query $query, array $options) {
 		if (empty($options)) {
 			$options['status'] = 0;
