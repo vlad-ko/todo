@@ -13,6 +13,20 @@ before_script:
 
 script:
   - sh -c "phpcs -p --extensions=php --standard=CakePHP ./src ./tests ./webroot"
+  - sh -c "mysql -e 'CREATE DATABASE todo_test;'"
+  - chmod -R 777 ./tmp
+  - echo "<?php
+    class DATABASE_CONFIG {
+    public \$test = array(
+      'datasource' => 'Database/Mysql',
+      'database' => 'todos_test',
+      'host' => '0.0.0.0',
+      'login' => 'travis',
+      'persistent' => false,
+    );
+    }" > ./config/app.php
+
+  - phpunit tests/TestCase
 
 notifications:
   email: false

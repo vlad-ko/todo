@@ -31,9 +31,7 @@ class TotosControllerTest extends IntegrationTestCase {
 			]),
 		['todo' => 'run test']);
 
-		// Check that the response was a 200
 		$this->assertResponseOk();
-
 		$expected = [
 			'response' => ['result' => 'success'],
 		];
@@ -54,7 +52,7 @@ class TotosControllerTest extends IntegrationTestCase {
 			]
 		]);
 
-		$result = $this->get(Router::url(
+		$result = $this->post(Router::url(
 			['controller' => 'todos',
 				'action' => 'get',
 				'_ext' => 'json'
@@ -64,15 +62,17 @@ class TotosControllerTest extends IntegrationTestCase {
 		$this->assertResponseOk();
 
 		$expected = [
-			[
-				'id' => 1,
-				'todo' => 'First To-do',
-				'created' => new Time('2014-11-21 12:00:00'),
-				'updated' => new Time('2014-11-21 12:00:00'),
-				'is_done' => false
+			['todos' =>
+				[
+					'id' => 1,
+					'todo' => 'First To-do',
+					'created' => new Time('2014-11-21 12:00:00'),
+					'updated' => new Time('2014-11-21 12:00:00'),
+					'is_done' => false
+				]
 			]
 		];
-		$this->assertEquals($expected, $result);
+		$this->assertEquals($expected, $this->_response->body());
 	}
 
 /**
@@ -97,14 +97,14 @@ class TotosControllerTest extends IntegrationTestCase {
 		// Check that the response was a 200
 		$this->assertResponseOk();
 
-		$data = $result = $this->get(Router::url(
+		$result = $this->get(Router::url(
 			['controller' => 'todos',
 				'action' => 'get',
 				'_ext' => 'json'
 			], ['status' => 1])
 		);
 		$expected = [];
-		$this->assertEquals($expected, $data);
+		$this->assertEquals($expected, $this->_response->body());
 	}
 
 }
