@@ -6,10 +6,7 @@ php:
   - 5.6
 
 env:
-    - DB=mysql db_class='Cake\Database\Driver\Mysql' db_dsn='mysql:host=0.0.0.0;dbname=todo_test' db_database='todo_test' db_username='travis' db_password=''
-    - DEFAULT=1
-    - COVERALLS=1
-    - PHPCS=1
+    - DB=mysql db_class='Cake\Database\Driver\Mysql' db_dsn='mysql:host=0.0.0.0;dbname=todo_test' db_database='todo_test' db_username='travis' db_password='' DEFAULT=1 COVERALLS=1 PHPCS=1
 
 before_script:
   - composer self-update
