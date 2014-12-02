@@ -17,6 +17,8 @@
 			<directory>./tests/TestCase</directory>
 		</testsuite>
 		<!-- Add plugin test suites here. -->
+		<exclude>./plugins/Migrations</exclude>
+		<exclude>./plugins/Migrations</exclude>
 	</testsuites>
 
 	<!-- Setup a listener for fixtures -->
