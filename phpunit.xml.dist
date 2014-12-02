@@ -19,6 +19,7 @@
 		<!-- Add plugin test suites here. -->
 		<exclude>./plugins/Migrations</exclude>
 		<exclude>./plugins/DebugKit</exclude>
+		<exclude>./vendor</exclude>
 	</testsuites>
 
 	<!-- Setup a listener for fixtures -->
