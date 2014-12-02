@@ -45,22 +45,19 @@ class TodosTable extends Table {
  * @param array $options list of options
  * @return query $query cakephp query object
  */
-	public function findRecent(Query $query, array $options) {
-		if (empty($options)) {
-			$options['status'] = 0;
-		}
-		$query = $this->find()
+	public function findRecent(Query $query, array $options = ['status' => 0]) {
+		return $query
 				->where(['is_done' => $options['status']])
 				->order(['updated' => 'DESC'])
-				->map(function ($row) {
-					$timeCreated = new Time($row->created);
-					$timeUpdated = new Time($row->updated);
+				->formatResults(function ($results, $query) {
+  					return $results->map(function ($row) {
+  						$timeCreated = new Time($row->created);
+						$timeUpdated = new Time($row->updated);
 
-					$row->created = $timeCreated->timeAgoInWords();
-					$row->updated = $timeUpdated->timeAgoInWords();
-				return $row;
-				});
-		//debug($query);
-		return $query;
+						$row->created = $timeCreated->timeAgoInWords();
+						$row->updated = $timeUpdated->timeAgoInWords();
+						return $row;
+  				});
+		});
 	}
 }
