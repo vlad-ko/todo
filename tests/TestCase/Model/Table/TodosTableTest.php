@@ -42,13 +42,13 @@ class TodosTest extends TestCase {
 		$this->assertEquals($expectedError, $resultingError);
 
 		$total = $this->Todos->find()->count();
-		$this->assertEquals(2, $total);
+		$this->assertEquals(3, $total);
 
 		$data = ['todo' => 'testing'];
 		$todo = $this->Todos->newEntity($data);
 		$this->Todos->save($todo);
 		$newTotal = $this->Todos->find()->count();
-		$this->assertEquals(3, $newTotal);
+		$this->assertEquals(4, $newTotal);
 	}
 
 /**
