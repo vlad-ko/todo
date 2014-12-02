@@ -1,6 +1,7 @@
 # CakePHP 3 and jQuery "To-do" Application
 
 [![Build Status](https://api.travis-ci.org/cakephp/app.png)](https://travis-ci.org/cakephp/app)
+[![Coverage Status](https://coveralls.io/repos/teknoid/todo/badge.png)]
 [![License](https://poser.pugx.org/cakephp/app/license.svg)](https://packagist.org/packages/cakephp/app)
 
 ## Installation
