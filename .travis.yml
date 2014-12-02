@@ -14,17 +14,6 @@ env:
 matrix:
   fast_finish: true
 
-  include:
-    - php: 5.4
-      env: PHPCS=1 DEFAULT=0
-
-    - php: 5.4
-      env: COVERALLS=1 DEFAULT=0
-
-  allow_failures:
-    - php: 5.4
-      env: PHPCS=1 DEFAULT=0
-
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
