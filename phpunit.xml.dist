@@ -28,6 +28,7 @@
               <directory>./plugins/Migrations</directory>
               <directory>./plugins/DebugKit</directory>
               <directory>./vendor</directory>
+              <directory>./config</directory>
         </blacklist>
     </filter>
 
