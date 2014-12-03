@@ -3,6 +3,7 @@
 use Phinx\Migration\AbstractMigration;
 
 class Initial extends AbstractMigration {
+
 /**
  * Change Method.
  *
