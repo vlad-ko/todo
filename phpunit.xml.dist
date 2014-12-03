@@ -22,6 +22,15 @@
 		<exclude>./vendor</exclude>
 	</testsuites>
 
+	<!-- don't need code coverage for these -->
+	<filter>
+        <blacklist>
+              <directory>./plugins/Migrations</directory>
+              <directory>./plugins/DebugKit</directory>
+              <directory>./vendor</directory>
+        </blacklist>
+    </filter>
+
 	<!-- Setup a listener for fixtures -->
 	<listeners>
 		<listener
