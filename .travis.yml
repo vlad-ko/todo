@@ -1,18 +1,33 @@
 language: php
 
 php:
-  - 5.4
   - 5.5
-  - 5.6
+
+env:
+    - DB=mysql db_class='Cake\Database\Driver\Mysql' db_dsn='mysql:host=0.0.0.0;dbname=todo_test' db_database='todo_test' db_username='travis' db_password='' COVERALLS=1 PHPCS=1
 
 before_script:
-  - sh -c "pear channel-discover pear.cakephp.org"
-  - sh -c "pear install PHP_CodeSniffer"
-  - sh -c "pear install --alldeps cakephp/CakePHP_CodeSniffer"
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+
+  - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE todo_test;'; fi"
+
+  - sh -c "if [ '$PHPCS' = '1' ]; then pear channel-discover pear.cakephp.org; fi"
+  - sh -c "if [ '$PHPCS' = '1' ]; then pear install --alldeps cakephp/CakePHP_CodeSniffer; fi"
+
+  - sh -c "if [ '$COVERALLS' = '1' ]; then composer require --dev satooshi/php-coveralls:dev-master; fi"
+  - sh -c "if [ '$COVERALLS' = '1' ]; then mkdir -p build/logs; fi"
+
   - phpenv rehash
+  - set +H
+  - cp phpunit.xml.dist phpunit.xml
+  - cp config/app.php config/app_local.php
+  - bin/cake migrations migrate
 
 script:
-  - sh -c "phpcs -p --extensions=php --standard=CakePHP ./src ./tests ./webroot"
+  - sh -c "if [ '$COVERALLS' = '1' ]; then phpunit --coverage-clover build/logs/clover.xml; fi"
+  - sh -c "if [ '$COVERALLS' = '1' ]; then php vendor/bin/coveralls -c .coveralls.yml -v; fi"
+  - sh -c "if [ '$PHPCS' = '1' ]; then phpcs -p --extensions=php --standard=CakePHP --ignore=vendor,plugins/* --ignore=tests . ; fi"
 
 notifications:
   email: false

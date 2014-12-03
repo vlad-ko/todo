@@ -62,8 +62,7 @@ class TodosController extends AppController {
  * @return void
  */
 	public function get($status = 0) {
-		$query = $this->Todos->find('recent', ['status' => $status]);
-		$todos = $query->toArray();
+		$todos = $this->Todos->find('recent', ['status' => $status]);
 		$this->set(compact('todos'));
 		$this->set('_serialize', ['todos']);
 	}
@@ -71,14 +70,14 @@ class TodosController extends AppController {
 /**
  * marks the to-do as complete, i.e. changes is_done to 1
  *
- * @param int $id id of the record to mark as done
+ * @param int $todoId id of the record to mark as done
  * @return void
  */
-	public function finish($id = null) {
+	public function finish($todoId = null) {
 		$response = ['result' => 'fail'];
-		if (!is_null($id)) {
+		if (!is_null($todoId)) {
 			$todos = TableRegistry::get('Todos');
-			$todo = $todos->get($id);
+			$todo = $todos->get($todoId);
 			$todos->patchEntity($todo, ['is_done' => 1]);
 			if ($todos->save($todo)) {
 				$response = ['result' => 'success'];
