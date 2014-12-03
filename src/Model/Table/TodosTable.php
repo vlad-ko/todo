@@ -56,6 +56,8 @@ class TodosTable extends Table {
 
 						$row->created = $timeCreated->timeAgoInWords();
 						$row->updated = $timeUpdated->timeAgoInWords();
+						$row->todo =  htmlspecialchars($row->todo);
+
 						return $row;
 					});
 				});
