@@ -42,13 +42,13 @@ class TodosTest extends TestCase {
 		$this->assertEquals($expectedError, $resultingError);
 
 		$total = $this->Todos->find()->count();
-		$this->assertEquals(3, $total);
+		$this->assertEquals(2, $total);
 
 		$data = ['todo' => 'testing'];
 		$todo = $this->Todos->newEntity($data);
 		$this->Todos->save($todo);
 		$newTotal = $this->Todos->find()->count();
-		$this->assertEquals(4, $newTotal);
+		$this->assertEquals(3, $newTotal);
 	}
 
 /**
@@ -80,9 +80,9 @@ class TodosTest extends TestCase {
 		$todo = $this->Todos->newEntity($data);
 		$this->Todos->save($todo);
 		$newTotal = $this->Todos->find()->count();
-		$this->assertEquals(4, $newTotal);
+		$this->assertEquals(3, $newTotal);
 
-		$result = $this->Todos->find('recent', ['status' => 1])->where(['id' => 4])->first();
+		$result = $this->Todos->find('recent', ['status' => 1])->where(['id' => 3])->first();
 		$this->assertEquals('&lt;script&gt;alert(&quot;hi&quot;)&lt;/script&gt;', $result->todo);
 	}
 
