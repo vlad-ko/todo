@@ -4,10 +4,12 @@ php:
   - 5.5
 
 env:
-    - DB=mysql db_class='Cake\Database\Driver\Mysql' db_dsn='mysql:host=0.0.0.0;dbname=todo_test' db_database='todo_test' db_username='travis' db_password='' COVERALLS=1 PHPCS=1
+  - DB=mysql db_class='Cake\Database\Driver\Mysql' db_dsn='mysql:host=0.0.0.0;dbname=todo_test' db_database='todo_test' db_username='travis' db_password='' COVERALLS=1 PHPCS=1
+
+before_install:
+  - composer self-update
 
 before_script:
-  - composer self-update
   - composer install --prefer-source --no-interaction --dev
 
   - sh -c "if [ '$DB' = 'mysql' ]; then mysql -e 'CREATE DATABASE todo_test;'; fi"
