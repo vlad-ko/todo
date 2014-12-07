@@ -17,8 +17,9 @@ class TodosController extends AppController {
 	}
 
 /**
- * main action for the application
+ * main action for the application, returns initial view. (empty for now)
  *
+ * @codeCoverageIgnore
  * @return void
  */
 	public function index() {
