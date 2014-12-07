@@ -17,16 +17,6 @@ class TodosController extends AppController {
 	}
 
 /**
- * cakephp's beforeFilter()
- *
- * @param CakeEventEvent $event cakephp event
- * @return void
- */
-	public function beforeFilter(\Cake\Event\Event $event) {
-		$this->RequestHandler->addInputType('json', ['json_decode', true]);
-	}
-
-/**
  * main action for the application
  *
  * @return void
