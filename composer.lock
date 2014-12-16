@@ -131,12 +131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "41501ebe9fd32ffa65eb802d4ccd494a0d750bd1"
+                "reference": "6cbb32f21f8c93494b377fe16a8c3fd887dee17a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/41501ebe9fd32ffa65eb802d4ccd494a0d750bd1",
-                "reference": "41501ebe9fd32ffa65eb802d4ccd494a0d750bd1",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/6cbb32f21f8c93494b377fe16a8c3fd887dee17a",
+                "reference": "6cbb32f21f8c93494b377fe16a8c3fd887dee17a",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-12-01 03:54:38"
+            "time": "2014-12-16 13:32:17"
         },
         {
             "name": "cakephp/debug_kit",
@@ -196,12 +196,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "8a6f3da9d7fc8cb5df33a1752de5d0b337b63047"
+                "reference": "0c34df3ca6fefd72e6fd08f48c4b9f55dd50ce61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/8a6f3da9d7fc8cb5df33a1752de5d0b337b63047",
-                "reference": "8a6f3da9d7fc8cb5df33a1752de5d0b337b63047",
+                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/0c34df3ca6fefd72e6fd08f48c4b9f55dd50ce61",
+                "reference": "0c34df3ca6fefd72e6fd08f48c4b9f55dd50ce61",
                 "shasum": ""
             },
             "require": {
@@ -245,7 +245,7 @@
                 "debug",
                 "kit"
             ],
-            "time": "2014-11-29 19:04:50"
+            "time": "2014-12-12 07:50:32"
         },
         {
             "name": "cakephp/migrations",
@@ -253,12 +253,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/migrations.git",
-                "reference": "58f49dd69aefa6304c5ca508a3105ccfbe7d4e9f"
+                "reference": "b695e01c59e40d1b14502511704be8df3230f8ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/migrations/zipball/58f49dd69aefa6304c5ca508a3105ccfbe7d4e9f",
-                "reference": "58f49dd69aefa6304c5ca508a3105ccfbe7d4e9f",
+                "url": "https://api.github.com/repos/cakephp/migrations/zipball/b695e01c59e40d1b14502511704be8df3230f8ec",
+                "reference": "b695e01c59e40d1b14502511704be8df3230f8ec",
                 "shasum": ""
             },
             "require": {
@@ -295,7 +295,7 @@
                 "cakephp",
                 "migrations"
             ],
-            "time": "2014-11-03 15:36:15"
+            "time": "2014-12-11 15:20:34"
         },
         {
             "name": "cakephp/plugin-installer",
@@ -517,24 +517,24 @@
         },
         {
             "name": "robmorgan/phinx",
-            "version": "v0.3.8",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/robmorgan/phinx.git",
-                "reference": "589319c8bd7f819580bbab11a8987fb38853bfe7"
+                "reference": "9096024ab7d6985ae541eb09aaf480e8f95a342c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/robmorgan/phinx/zipball/589319c8bd7f819580bbab11a8987fb38853bfe7",
-                "reference": "589319c8bd7f819580bbab11a8987fb38853bfe7",
+                "url": "https://api.github.com/repos/robmorgan/phinx/zipball/9096024ab7d6985ae541eb09aaf480e8f95a342c",
+                "reference": "9096024ab7d6985ae541eb09aaf480e8f95a342c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "symfony/class-loader": "2.*",
-                "symfony/config": "2.*",
-                "symfony/console": "2.*",
-                "symfony/yaml": "2.*"
+                "symfony/class-loader": "~2.5.0",
+                "symfony/config": "~2.5.0",
+                "symfony/console": "~2.5.0",
+                "symfony/yaml": "~2.5.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "3.7.*",
@@ -562,7 +562,7 @@
                 }
             ],
             "description": "Phinx makes it ridiculously easy to manage the database migrations for your PHP app.",
-            "homepage": "http://phinx.org",
+            "homepage": "https://phinx.org",
             "keywords": [
                 "database",
                 "database migrations",
@@ -570,21 +570,21 @@
                 "migrations",
                 "phinx"
             ],
-            "time": "2014-10-06 09:27:17"
+            "time": "2014-12-14 13:06:08"
         },
         {
             "name": "symfony/class-loader",
-            "version": "v2.6.0",
+            "version": "v2.5.8",
             "target-dir": "Symfony/Component/ClassLoader",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ClassLoader.git",
-                "reference": "b403af3d4fa3a2c3c926121c05042107e3a5b916"
+                "reference": "50908eb16cd0069d5b95ae8ce0d38b9a20c21515"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ClassLoader/zipball/b403af3d4fa3a2c3c926121c05042107e3a5b916",
-                "reference": "b403af3d4fa3a2c3c926121c05042107e3a5b916",
+                "url": "https://api.github.com/repos/symfony/ClassLoader/zipball/50908eb16cd0069d5b95ae8ce0d38b9a20c21515",
+                "reference": "50908eb16cd0069d5b95ae8ce0d38b9a20c21515",
                 "shasum": ""
             },
             "require": {
@@ -596,7 +596,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -620,21 +620,21 @@
             ],
             "description": "Symfony ClassLoader Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-20 13:24:23"
+            "time": "2014-12-02 20:15:53"
         },
         {
             "name": "symfony/config",
-            "version": "v2.6.0",
+            "version": "v2.5.8",
             "target-dir": "Symfony/Component/Config",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "9282bb7f3251a95478a7198534577c02ab30b6b6"
+                "reference": "92f0b4c625b8c42d394b53f879d2795d84bb8c4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/9282bb7f3251a95478a7198534577c02ab30b6b6",
-                "reference": "9282bb7f3251a95478a7198534577c02ab30b6b6",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/92f0b4c625b8c42d394b53f879d2795d84bb8c4f",
+                "reference": "92f0b4c625b8c42d394b53f879d2795d84bb8c4f",
                 "shasum": ""
             },
             "require": {
@@ -644,7 +644,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -668,21 +668,21 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-20 13:24:23"
+            "time": "2014-12-02 20:15:53"
         },
         {
             "name": "symfony/console",
-            "version": "v2.6.0",
+            "version": "v2.5.8",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "d3bac228fd7a2aac9193e241b239880b3ba39a10"
+                "reference": "806e29280b4b9700693b32d055ce1b1a491dec39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/d3bac228fd7a2aac9193e241b239880b3ba39a10",
-                "reference": "d3bac228fd7a2aac9193e241b239880b3ba39a10",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/806e29280b4b9700693b32d055ce1b1a491dec39",
+                "reference": "806e29280b4b9700693b32d055ce1b1a491dec39",
                 "shasum": ""
             },
             "require": {
@@ -690,18 +690,16 @@
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.1",
-                "symfony/process": "~2.1"
+                "symfony/event-dispatcher": "~2.1"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
-                "symfony/event-dispatcher": "",
-                "symfony/process": ""
+                "symfony/event-dispatcher": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -725,21 +723,21 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-20 13:24:23"
+            "time": "2014-12-02 20:15:53"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.6.0",
+            "version": "v2.6.1",
             "target-dir": "Symfony/Component/Filesystem",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "6f7c7e42f20ee200d8ac5d2ec1d2a524138305e0"
+                "reference": "ff6efc95256cb33031933729e68b01d720b5436b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/6f7c7e42f20ee200d8ac5d2ec1d2a524138305e0",
-                "reference": "6f7c7e42f20ee200d8ac5d2ec1d2a524138305e0",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/ff6efc95256cb33031933729e68b01d720b5436b",
+                "reference": "ff6efc95256cb33031933729e68b01d720b5436b",
                 "shasum": ""
             },
             "require": {
@@ -772,21 +770,21 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-16 17:28:09"
+            "time": "2014-12-02 20:19:20"
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.6.0",
+            "version": "v2.5.8",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "51c845cf3e4bfc182d1d5c05ed1c7338361d86f8"
+                "reference": "b6ad726d415aa787ac4deddc75e7ad7a1bcc84bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/51c845cf3e4bfc182d1d5c05ed1c7338361d86f8",
-                "reference": "51c845cf3e4bfc182d1d5c05ed1c7338361d86f8",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/b6ad726d415aa787ac4deddc75e7ad7a1bcc84bd",
+                "reference": "b6ad726d415aa787ac4deddc75e7ad7a1bcc84bd",
                 "shasum": ""
             },
             "require": {
@@ -795,7 +793,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -819,7 +817,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-20 13:24:23"
+            "time": "2014-12-02 20:15:53"
         }
     ],
     "packages-dev": [

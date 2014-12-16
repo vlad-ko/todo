@@ -23,6 +23,8 @@ use Cake\Routing\Router;
 
 Router::extensions(['json']);
 
+Router::defaultRouteClass('InflectedRoute');
+
 Router::scope('/', function ($routes) {
 /**
  * Here, we are connecting '/' (base path) to a controller called 'Pages',
