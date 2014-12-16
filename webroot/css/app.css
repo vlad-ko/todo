@@ -1,5 +1,5 @@
 html,body { background-color: #C2F1FF; padding-top: 60px;}
-.task-container {background-color: #fff; padding: 15px; border: 1px solid #eee; color: #8F979E; margin-top: 20px;}
+.task-container {background-color: #fff; padding: 15px; border: 1px solid #eee; color: #8F979E; margin-top: 20px; margin-bottom: 50px;}
 .small {color: #9E9E88; text-decoration: ;}
 .small-done {color: #9E9E88; font-size: 85%;}
 .finished-task {margin-bottom: 10px;}
