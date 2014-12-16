@@ -4,7 +4,7 @@ php:
   - 5.5
 
 env:
-    - DB=mysql db_class='Cake\Database\Driver\Mysql' db_dsn='mysql:host=0.0.0.0;dbname=todo_test' db_database='todo_test' db_username='travis' db_password='' COVERALLS=1 PHPCS=1
+    - DB=mysql db_class='Cake\Database\Driver\Mysql' db_dsn='mysql:host=0.0.0.0;dbname=todo_test' db_database='todo_test' db_username='travis' db_password='' COVERALLS=1 PHPCS=0
 
 before_script:
   - composer selfupdate
