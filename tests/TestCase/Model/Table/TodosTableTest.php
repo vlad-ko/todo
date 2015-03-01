@@ -42,17 +42,17 @@ class TodosTest extends TestCase {
 		$this->assertEquals($expectedError, $resultingError);
 
 		$total = $this->Todos->find()->count();
-		$this->assertEquals(3, $total);
+		$this->assertEquals(2, $total);
 
 		$data = ['todo' => 'testing'];
 		$todo = $this->Todos->newEntity($data);
 		$this->Todos->save($todo);
 		$newTotal = $this->Todos->find()->count();
-		$this->assertEquals(4, $newTotal);
+		$this->assertEquals(3, $newTotal);
 	}
 
 /**
- * test cutom finder method
+ * test custom finder method
  *
  * @return void
  */
@@ -71,7 +71,23 @@ class TodosTest extends TestCase {
 	}
 
 /**
- * test to make sure customer finder return the dates in a human-readable format
+ * test saving of a to-do with evil data
+ *
+ * @return void
+ */
+	public function testSaveEvilScript() {
+		$data = ['todo' => '<script>alert("hi")</script>', 'is_done' => 1];
+		$todo = $this->Todos->newEntity($data);
+		$this->Todos->save($todo);
+		$newTotal = $this->Todos->find()->count();
+		$this->assertEquals(3, $newTotal);
+
+		$result = $this->Todos->find('recent', ['status' => 1])->where(['id' => 3])->first();
+		$this->assertEquals('&lt;script&gt;alert(&quot;hi&quot;)&lt;/script&gt;', $result->todo);
+	}
+
+/**
+ * test to make sure custom finder returns the dates in a human-readable format
  *
  * @return void
  */
@@ -80,16 +96,14 @@ class TodosTest extends TestCase {
 		$todo = $todos->get(1);
 		$todos->patchEntity($todo, ['updated' => new Time(date('Y-m-d H:i:s', strtotime('-3 seconds ago')))]);
 		$todos->save($todo);
-		$result = $todos->find('recent', ['status' => 0]);
-		$r = $result->toArray();
-		$this->assertContains('second', $r[0]->updated);
+		$result = $todos->find('recent', ['status' => 0])->where(['id' => 1])->first();
+		$this->assertContains('second', $result->updated);
 
 		$todos = TableRegistry::get('Todos');
 		$todo = $todos->get(1);
 		$todos->patchEntity($todo, ['created' => new Time(date('Y-m-d H:i:s', strtotime('-3 seconds ago')))]);
 		$todos->save($todo);
-		$result = $todos->find('recent', ['status' => 0]);
-		$r = $result->toArray();
-		$this->assertContains('second', $r[0]->created);
+		$result = $todos->find('recent', ['status' => 0])->where(['id' => 1])->first();
+		$this->assertContains('second', $result->created);
 	}
 }

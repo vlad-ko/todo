@@ -21,13 +21,6 @@ class TodosFixture extends TestFixture {
 			'is_done' => '1',
 			'created' => '2013-11-21 12:00:00',
 			'updated' => '2013-11-21 12:00:00'
-		],
-		[
-			'id' => 3,
-			'todo' => 'More stuff To-do',
-			'is_done' => '0',
-			'created' => '2013-11-21 12:00:00',
-			'updated' => '2013-11-21 12:00:00'
-		],
+		]
 	];
 }
