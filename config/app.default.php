@@ -207,9 +207,9 @@ $config = [
 			'driver' => 'Cake\Database\Driver\Mysql',
 			'persistent' => false,
 			'host' => 'localhost',
-			'username' => 'my_app',
-			'password' => 'secret',
-			'database' => 'my_app',
+			'username' => 'travis',
+			'password' => '',
+			'database' => 'todo_test',
 			'encoding' => 'utf8',
 			'timezone' => 'UTC',
 			'cacheMetadata' => true,
@@ -242,9 +242,9 @@ $config = [
 			'driver' => 'Cake\Database\Driver\Mysql',
 			'persistent' => false,
 			'host' => 'localhost',
-			'username' => 'my_app',
-			'password' => 'secret',
-			'database' => 'test_myapp',
+			'username' => 'travis',
+			'password' => '',
+			'database' => 'todo_test',
 			'encoding' => 'utf8',
 			'timezone' => 'UTC',
 			'cacheMetadata' => true,
@@ -282,7 +282,7 @@ $config = [
  * - `cookie` - The name of the cookie to use. Defaults to 'CAKEPHP'.
  * - `cookiePath` - The url path for which session cookie is set. Maps to the
  *   `session.cookie_path` php.ini config. Defaults to base path of app.
- * - `timeout` - The time in minutes the session should be valid for. 
+ * - `timeout` - The time in minutes the session should be valid for.
  *    Pass 0 to disable checking timeout.
  * - `defaults` - The default configuration set to use as a basis for your session.
  *    There are four built-in options: php, cake, cache, database.

@@ -31,14 +31,11 @@ class TotosControllerTest extends IntegrationTestCase {
 			]),
 		['todo' => 'run test']);
 
-		// Check that the response was a 200
 		$this->assertResponseOk();
-
 		$expected = [
 			'response' => ['result' => 'success'],
 		];
 		$expected = json_encode($expected, JSON_PRETTY_PRINT);
-
 		$this->assertEquals($expected, $this->_response->body());
 	}
 
@@ -54,7 +51,7 @@ class TotosControllerTest extends IntegrationTestCase {
 			]
 		]);
 
-		$result = $this->get(Router::url(
+		$result = $this->post(Router::url(
 			['controller' => 'todos',
 				'action' => 'get',
 				'_ext' => 'json'
@@ -64,15 +61,52 @@ class TotosControllerTest extends IntegrationTestCase {
 		$this->assertResponseOk();
 
 		$expected = [
-			[
-				'id' => 1,
-				'todo' => 'First To-do',
-				'created' => new Time('2014-11-21 12:00:00'),
-				'updated' => new Time('2014-11-21 12:00:00'),
-				'is_done' => false
+			'todos' =>
+				[
+					[
+						'id' => 1,
+						'todo' => 'First To-do',
+						'created' => 'on 11/21/13',
+						'updated' => 'on 11/21/13',
+						'is_done' => false
+					],
+					[
+						'id' => 3,
+						'todo' => 'More stuff To-do',
+						'created' => 'on 11/21/13',
+						'updated' => 'on 11/21/13',
+						'is_done' => false
+					]
+				],
+		];
+		$expected = json_encode($expected, JSON_PRETTY_PRINT);
+		$this->assertEquals($expected, $this->_response->body());
+
+		// get completed to-do's
+		$result = $this->post(Router::url(
+			['controller' => 'todos',
+				'action' => 'get',
+				'_ext' => 'json',
+				1
+			])
+		);
+		// Check that the response was a 200
+		$this->assertResponseOk();
+
+		$expected = [
+			'todos' => [
+				[
+					'id' => 2,
+					'todo' => 'Complete To-do',
+					'created' => 'on 11/21/13',
+					'updated' => 'on 11/21/13',
+					'is_done' => true
+
+				]
 			]
 		];
-		$this->assertEquals($expected, $result);
+		$expected = json_encode($expected, JSON_PRETTY_PRINT);
+		$this->assertEquals($expected, $this->_response->body());
 	}
 
 /**
@@ -90,21 +124,53 @@ class TotosControllerTest extends IntegrationTestCase {
 		$result = $this->get(Router::url(
 			['controller' => 'todos',
 				'action' => 'finish',
-				'_ext' => 'json'
-			], ['id' => 1])
+				'_ext' => 'json',
+				3
+			])
 		);
+		// Check that the response was a 200
+		$this->assertResponseOk();
+		$expected = [
+			'response' => ['result' => 'success'],
+		];
+		$expected = json_encode($expected, JSON_PRETTY_PRINT);
+		$this->assertEquals($expected, $this->_response->body());
 
+		// get completed to-do's
+		$result = $this->post(Router::url(
+			['controller' => 'todos',
+				'action' => 'get',
+				'_ext' => 'json',
+				1
+			])
+		);
 		// Check that the response was a 200
 		$this->assertResponseOk();
 
-		$data = $result = $this->get(Router::url(
-			['controller' => 'todos',
-				'action' => 'get',
-				'_ext' => 'json'
-			], ['status' => 1])
-		);
-		$expected = [];
-		$this->assertEquals($expected, $data);
+		$expected = [
+			'todos' => [
+				[
+					'id' => 3,
+					'todo' => 'More stuff To-do',
+					'created' => 'on 11/21/13',
+					'updated' => 'just now',
+					'is_done' => true
+
+				],
+				[
+					'id' => 2,
+					'todo' => 'Complete To-do',
+					'created' => 'on 11/21/13',
+					'updated' => 'on 11/21/13',
+					'is_done' => true
+
+				],
+
+			]
+		];
+		$expected = json_encode($expected, JSON_PRETTY_PRINT);
+
+		$this->assertEquals($expected, $this->_response->body());
 	}
 
 }

@@ -17,7 +17,20 @@
 			<directory>./tests/TestCase</directory>
 		</testsuite>
 		<!-- Add plugin test suites here. -->
+		<exclude>./plugins/Migrations</exclude>
+		<exclude>./plugins/DebugKit</exclude>
+		<exclude>./vendor</exclude>
 	</testsuites>
+
+	<!-- don't need code coverage for these -->
+	<filter>
+        <blacklist>
+              <directory>./plugins/Migrations</directory>
+              <directory>./plugins/DebugKit</directory>
+              <directory>./vendor</directory>
+              <directory>./config</directory>
+        </blacklist>
+    </filter>
 
 	<!-- Setup a listener for fixtures -->
 	<listeners>
