@@ -1,4 +1,4 @@
-[![Related blog post](http://zenofcoding.com/2014/11/06/cake3-baby-steps-step-1-getting-started/)
+[Related blog post](http://zenofcoding.com/2014/11/06/cake3-baby-steps-step-1-getting-started/)
 
 # CakePHP 3 and jQuery "To-do" Application
 
