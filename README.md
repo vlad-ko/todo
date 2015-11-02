@@ -1,3 +1,5 @@
+[![Related blog post](http://zenofcoding.com/2014/11/06/cake3-baby-steps-step-1-getting-started/)
+
 # CakePHP 3 and jQuery "To-do" Application
 
 [![Build Status](https://api.travis-ci.org/cakephp/app.png)](https://travis-ci.org/teknoid/todo.svg?branch=develop)
