@@ -3,7 +3,7 @@
 # CakePHP 3 and jQuery "To-do" Application
 
 [![Build Status](https://api.travis-ci.org/cakephp/app.png)](https://travis-ci.org/teknoid/todo.svg?branch=develop)
-[![Coverage Status](https://coveralls.io/repos/teknoid/todo/badge.png?branch=master)](https://coveralls.io/r/teknoid/todo?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/vlad-ko/todo/badge.svg?branch=master)](https://coveralls.io/github/vlad-ko/todo?branch=master)
 [![License](https://poser.pugx.org/cakephp/app/license.svg)](https://packagist.org/packages/cakephp/app)
 
 ## Installation
